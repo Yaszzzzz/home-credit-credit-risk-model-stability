@@ -1,8 +1,7 @@
-Home Credit Risk Model Stability
-This project involves building a predictive model to assess credit risk using a dataset from Home Credit. 
-The goal is to predict the probability of default for each loan application based on various data sources.
+Project Overview
+The project aims to build a predictive model for assessing credit risk using data provided by Home Credit. The model predicts the probability of default for each loan application based on various financial and personal attributes of the applicants.
 
-Table of Contents//
+Table of Contents
 Overview
 Project Structure
 Dataset
@@ -15,14 +14,13 @@ Dependencies
 Usage
 Contributing
 License
+Important Links
+1. Overview <a name="overview"></a>
+The project involves developing a robust credit risk model using data from Home Credit. Various machine learning models are trained and evaluated to predict loan defaults accurately.
 
-
-Overview
-The project aims to develop a robust credit risk model using data provided by Home Credit. 
-The dataset includes various financial and personal attributes of loan applicants, which are used to predict the likelihood of default. 
-The model is evaluated based on its ability to predict loan defaults accurately.
-
-Project Structure
+2. Project Structure <a name="project-structure"></a>
+bash
+Copy code
 .
 ├── README.md               # Overview and setup instructions
 ├── requirements.txt        # List of dependencies
@@ -33,64 +31,58 @@ Project Structure
 │   └── test/               # Test dataset (parquet files)
 ├── models/                 # Saved model checkpoints
 └── submissions/            # Submitted prediction files
+3. Dataset <a name="dataset"></a>
+The dataset is provided in parquet format and includes multiple files from different sources related to loan applicants (e.g., static data, credit bureau records). Data preprocessing involves cleaning, aggregating, and transforming these files into a unified dataset suitable for modeling.
 
+4. Feature Engineering <a name="feature-engineering"></a>
+Feature engineering involves creating new features from the raw dataset to enhance model performance. Steps include handling missing values, date variable transformations, aggregation features creation, and categorical variable encoding.
 
-Dataset
-The dataset is provided in parquet format and consists of multiple files corresponding to different data sources related to loan applicants. 
-These include static data, credit bureau records, previous loan applications, and more. Data preprocessing involves reading, cleaning, and aggregating these files into a single dataset suitable for modeling.
+5. Model Training <a name="model-training"></a>
+The project trains several machine learning models including:
 
-Feature Engineering
-Feature engineering is a crucial step where additional features are created from the raw dataset to improve model performance. 
-This includes handling missing values, transforming date variables, creating aggregation features, and encoding categorical variables.
+CatBoostClassifier
+LGBMClassifier
+XGBClassifier
+Models are trained using cross-validation with hyperparameter tuning and early stopping techniques to prevent overfitting.
 
-Model Training
-The training process involves fitting several machine learning models to the prepared dataset. The models used include:
+6. Evaluation <a name="evaluation"></a>
+Model performance is evaluated using the Area Under the Receiver Operating Characteristic Curve (AUC-ROC) metric. Cross-validation provides estimates of model performance on unseen data partitions.
 
-CatBoostClassifier: A gradient boosting model that handles categorical variables naturally.
-LGBMClassifier: Another gradient boosting model optimized for large datasets.
-XGBClassifier: A powerful gradient boosting model known for its efficiency and performance.
-Models are trained using cross-validation to ensure robustness and generalization. Hyperparameter tuning and early stopping techniques are applied to prevent overfitting.
+7. Submission <a name="submission"></a>
+Predictions for the test dataset are generated using trained models and saved as CSV files in the submissions/ directory, formatted according to Kaggle competition submission requirements.
 
-Evaluation
-Model performance is evaluated using the Area Under the Receiver Operating Characteristic Curve (AUC-ROC) metric. 
-Cross-validation is used to estimate performance on unseen data partitions.
-
-Submission
-Predictions for the test dataset are generated using the trained models. These predictions are then formatted according to the Kaggle competition submission requirements and saved as CSV files.
-
-Environment Setup
+8. Environment Setup <a name="environment-setup"></a>
 To set up the environment:
 
 Clone this repository.
 Install dependencies listed in requirements.txt.
 Ensure Python 3.x and necessary libraries are installed.
-Dependencies
-Key Python libraries used in this project include:
+9. Dependencies <a name="dependencies"></a>
+Key Python libraries used:
 
-numpy: For numerical computations.
-pandas: Data manipulation and analysis.
-polars: Efficient data processing.
-lightgbm, xgboost: Gradient boosting models.
-catboost: Gradient boosting model with built-in categorical handling.
-scikit-learn: Machine learning utilities.
-seaborn, matplotlib: Data visualization.
-
-
-Usage
-To reproduce the results:
+numpy
+pandas
+polars
+lightgbm, xgboost
+catboost
+scikit-learn
+seaborn, matplotlib
+10. Usage <a name="usage"></a>
+To reproduce results:
 
 Prepare the dataset as described in train.py.
 Run python train.py to execute data preprocessing, model training, and evaluation.
 Predictions for the test dataset will be generated and saved in the submissions/ directory.
+11. Contributing <a name="contributing"></a>
+Contributions to improve this project are welcome:
 
-Contributing
-Contributions to improve this project are welcome. Please fork the repository, make changes, and submit a pull request. For major changes, please open an issue first to discuss the proposed changes.
+Fork the repository.
+Make changes and submit a pull request.
+For major changes, open an issue first to discuss proposed modifications.
+12. License <a name="license"></a>
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-IMPORTANT LINKS
-https://www.kaggle.com/competitions/home-credit-credit-risk-model-stability
-
+13. Important Links <a name="important-links"></a>
+Kaggle Competition - Home Credit Credit Risk Model Stability
 
 
