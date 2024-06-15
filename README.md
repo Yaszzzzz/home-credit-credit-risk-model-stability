@@ -2,7 +2,7 @@ Home Credit Risk Model Stability
 This project involves building a predictive model to assess credit risk using a dataset from Home Credit. 
 The goal is to predict the probability of default for each loan application based on various data sources.
 
-Table of Contents
+Table of Contents\\
 Overview
 Project Structure
 Dataset
